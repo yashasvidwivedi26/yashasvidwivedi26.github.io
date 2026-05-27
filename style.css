@@ -1,58 +1,87 @@
-
 /* 1. Global Styles & Reset */
 body {
-    background-color: #0f172a; /* Sleek, dark slate background */
-    color: #f1f5f9;            /* Soft off-white text (easier on the eyes than pure white) */
+    background-color: #0f172a; 
+    color: #f1f5f9;            
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;         /* Centers everything vertically on the screen */
+    min-height: 100vh;         
 }
 
 /* 2. Profile Card Container */
 .profile-container {
-    background-color: #1e293b; /* Slightly lighter slate to create a "card" effect */
+    background-color: #1e293b; 
     max-width: 600px;
     width: 90%;
     padding: 2.5rem;
-    border-radius: 16px;       /* Smooth, rounded corners */
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3); /* Soft shadow depth */
-    text-align: center;
+    border-radius: 16px;       
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
+    text-align: center; /* This automatically centers all text inside the card! */
 }
 
 /* 3. Typography */
 h1 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #ffffff;
     font-weight: 700;
 }
 
+h2 {
+    font-size: 1.5rem;
+    color: #3b82f6; /* Modern, clean blue color for your name */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
 .bio-text {
     font-size: 1.1rem;
-    line-height: 1.6;          /* Adds space between lines of text for readability */
-    color: #cbd5e1;            /* Slightly muted gray for the paragraph text */
+    line-height: 1.6;          
+    color: #cbd5e1;            
     margin-bottom: 2rem;
 }
 
-/* 4. Links & Buttons */
-.links a {
-    display: inline-block;
-    background-color: #2563eb; /* Modern tech-blue button */
+/* 4. Links & Buttons Layout */
+.links-container {
+    display: flex;
+    flex-direction: column; /* Puts buttons on separate lines */
+    gap: 12px;              /* Adds clean spacing between the two buttons */
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;      
+    align-items: center;       
+    justify-content: center;
+    gap: 10px;                 
     color: #ffffff;
-    text-decoration: none;     /* Removes the old-school underline */
+    text-decoration: none;     
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth hover animation */
+    width: 200px; /* Gives both buttons the exact same uniform width */
+    transition: background-color 0.2s ease, transform 0.2s ease; 
 }
 
-/* Adds a nice interactive effect when you hover over the GitHub button */
-.links a:hover {
-    background-color: #1d4ed8; /* Darker blue on hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+/* Individual Button Colors */
+.btn-github {
+    background-color: #24292e; /* Sleek GitHub Dark Grey */
 }
 
+.btn-github:hover {
+    background-color: #1a1e22;
+    transform: translateY(-2px); 
+}
+
+.btn-goals {
+    background-color: #16a34a; /* Sharp Green for Goals */
+}
+
+.btn-goals:hover {
+    background-color: #15803d;
+    transform: translateY(-2px); 
+}
