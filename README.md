@@ -1,3 +1,9 @@
+---
+layout: default
+title: Documentation
+permalink: /readme/
+---
+
 # yashasvidwivedi26.github.io
 Welcome to My Website! 👋
 
