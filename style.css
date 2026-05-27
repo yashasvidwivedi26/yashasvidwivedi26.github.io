@@ -1,29 +1,33 @@
 /* ==========================================
    1. Global Styles & Reset
    ========================================== */
+* {
+    box-sizing: border-box;    
+}
+
 body {
-    background-color: #0f172a; /* Sleek, dark slate background */
-    color: #f1f5f9;            /* Soft off-white text for readability */
+    background-color: #0f172a; 
+    color: #f1f5f9;            
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;         /* Centers the profile card vertically on any screen */
+    min-height: 100vh;         
 }
 
 /* ==========================================
    2. Profile Card Container
    ========================================== */
 .profile-container {
-    background-color: #1e293b; /* Lighter slate to create a modern "card" look */
-    max-width: 600px;
+    background-color: #1e293b; 
+    max-width: 480px;          /* Adjusted slightly to make the filled blocks look incredibly crisp */
     width: 90%;
     padding: 2.5rem;
-    border-radius: 16px;       /* Smooth, modern rounded corners */
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); /* Premium depth shadow */
-    text-align: center;        /* Centers the titles and bio paragraph */
+    border-radius: 16px;       
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
+    text-align: center;        
 }
 
 /* ==========================================
@@ -38,7 +42,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    color: #3b82f6;            /* Accent blue color for your name */
+    color: #3b82f6;            
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -46,41 +50,42 @@ h2 {
 
 .bio-text {
     font-size: 1.1rem;
-    line-height: 1.6;          /* Generous line height for a clean layout */
-    color: #cbd5e1;            /* Slightly muted gray text */
+    line-height: 1.6;          
+    color: #cbd5e1;            
     margin-bottom: 2rem;
 }
 
 /* ==========================================
-   4. Links & Buttons Layout
+   4. Links & Buttons Shared Layout
    ========================================== */
 .links-container {
     display: flex;
-    flex-direction: column;    /* Stacks all buttons vertically */
-    gap: 12px;                 /* Clean, even spacing between buttons */
+    flex-direction: column;    
+    gap: 12px;                 
+    width: 100%;               
     align-items: center;
 }
 
 .btn {
     display: inline-flex;      
     align-items: center;       
-    justify-content: flex-start; /* Perfectly aligns icons and text to the left */
-    padding-left: 1.5rem;        /* Uniform starting position for text alignment */
+    justify-content: center;   /* Centers the text and icon perfectly together inside the block */
     gap: 12px;                 
-    color: #ffffff;
-    text-decoration: none;     /* Removes standard link underlines */
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    color: #ffffff;            
+    text-decoration: none;     
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     border-radius: 8px;
     font-weight: 600;
-    width: 220px;               /* Fixed uniform width for clean symmetry */
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Smooth hover effects */
+    width: 260px;              /* Sets a clean, uniform width matching your original layout style */
+    transition: background-color 0.2s ease, transform 0.2s ease; 
 }
 
-/* Forces all button icons to align on a perfect vertical axis */
+/* Fixes icon size alignment */
 .btn i {
     width: 20px;                
     text-align: center;
+    font-size: 1.1rem;
 }
 
 /* ==========================================
@@ -93,10 +98,10 @@ h2 {
 }
 .btn-github:hover {
     background-color: #1a1e22;
-    transform: translateY(-2px); /* Subtle lift animation */
+    transform: translateY(-2px); 
 }
 
-/* Goals and Stats - Forest Green */
+/* Goals and Stats - Vibrant Green */
 .btn-goals {
     background-color: #16a34a; 
 }
@@ -105,12 +110,12 @@ h2 {
     transform: translateY(-2px); 
 }
 
-/* YouTube - Classic Brand Red */
+/* YouTube - Brand Red */
 .btn-youtube {
-    background-color: #ff0000; 
+    background-color: #ef4444; 
 }
 .btn-youtube:hover {
-    background-color: #cc0000;
+    background-color: #dc2626;
     transform: translateY(-2px);
 }
 
@@ -119,7 +124,7 @@ h2 {
     background-color: #5865f2; 
 }
 .btn-discord:hover {
-    background-color: #404eed;
+    background-color: #4752c4;
     transform: translateY(-2px);
 }
 
@@ -132,12 +137,11 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* Roblox - Deep Black with Border */
+/* Roblox - Deep Graphite Gray */
 .btn-roblox {
-    background-color: #000000; 
-    border: 1px solid #334155;  /* Subtle border to pop against the slate card */
+    background-color: #374151; 
 }
 .btn-roblox:hover {
-    background-color: #111827;
+    background-color: #1f2937;
     transform: translateY(-2px);
 }
