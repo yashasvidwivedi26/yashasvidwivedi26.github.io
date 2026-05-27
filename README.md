@@ -1,5 +1,5 @@
 ---
-permalink: /readme/
+permalink: /stats-and-goals/
 ---
 
 Welcome to My Website! 👋
