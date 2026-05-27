@@ -19,7 +19,7 @@ body {
     padding: 2.5rem;
     border-radius: 16px;       
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
-    text-align: center; /* This automatically centers all text inside the card! */
+    text-align: center; 
 }
 
 /* 3. Typography */
@@ -32,7 +32,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    color: #3b82f6; /* Modern, clean blue color for your name */
+    color: #3b82f6; 
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -48,8 +48,8 @@ h2 {
 /* 4. Links & Buttons Layout */
 .links-container {
     display: flex;
-    flex-direction: column; /* Puts buttons on separate lines */
-    gap: 12px;              /* Adds clean spacing between the two buttons */
+    flex-direction: column; 
+    gap: 12px;              
     align-items: center;
 }
 
@@ -63,25 +63,78 @@ h2 {
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 600;
-    width: 200px; /* Gives both buttons the exact same uniform width */
+    width: 200px; 
     transition: background-color 0.2s ease, transform 0.2s ease; 
 }
 
-/* Individual Button Colors */
 .btn-github {
-    background-color: #24292e; /* Sleek GitHub Dark Grey */
+    background-color: #24292e; 
 }
-
 .btn-github:hover {
     background-color: #1a1e22;
     transform: translateY(-2px); 
 }
 
 .btn-goals {
-    background-color: #16a34a; /* Sharp Green for Goals */
+    background-color: #16a34a; 
 }
-
 .btn-goals:hover {
     background-color: #15803d;
     transform: translateY(-2px); 
+}
+
+/* 5. Social Grid Layout (4 Icons Row) */
+.social-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    width: 232px; /* Perfectly sized to balance out the width of the main buttons above */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Social Button Branding Colors */
+.btn-youtube {
+    background-color: #ff0000; /* YouTube Red */
+}
+.btn-youtube:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.btn-discord {
+    background-color: #5865f2; /* Discord Blurple */
+}
+.btn-discord:hover {
+    background-color: #404eed;
+    transform: translateY(-2px);
+}
+
+.btn-reddit {
+    background-color: #ff4500; /* Reddit Orangered */
+}
+.btn-reddit:hover {
+    background-color: #e03d00;
+    transform: translateY(-2px);
+}
+
+.btn-roblox {
+    background-color: #000000; /* Roblox Black */
+    border: 1px solid #334155;
+}
+.btn-roblox:hover {
+    background-color: #111827;
+    transform: translateY(-2px);
 }
