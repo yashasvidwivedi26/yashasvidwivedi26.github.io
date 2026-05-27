@@ -20,5 +20,5 @@ This is my very first website hosted for free on GitHub Pages.
 ---
 *Created with love by a future web developer.*
 
-[← Back to Home](/index.html)
+[← Back to Home](/yashasvidwivedi26.github.io)
 
