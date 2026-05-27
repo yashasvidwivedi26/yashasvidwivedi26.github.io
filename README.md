@@ -18,7 +18,7 @@ This is my very first website hosted for free on GitHub Pages.
 3. Share my progress with the world
 
 ---
-*Created with love by a future web developer.*
+*Created by another beginner developer.*
 
 [← Back to Home](/yashasvidwivedi26.github.io)
 
