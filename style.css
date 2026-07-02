@@ -147,3 +147,7 @@ h2 {
     background-color: #111827;
     transform: translateY(-2px);
 }
+
+.center-text-list li {
+    margin-bottom: 12px; /* This pushes the next item down */
+}
