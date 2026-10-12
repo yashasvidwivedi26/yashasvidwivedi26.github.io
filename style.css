@@ -1,153 +1,310 @@
-/* ==========================================
-   1. Global Styles & Reset
-   ========================================== */
-* {
-    box-sizing: border-box;    
+/* ==========================================================================
+   MATERIAL 3 DARK THEME DESIGN TOKENS (From Theme Builder Export)
+   ========================================================================== */
+:root {
+    --md-sys-color-background: #0F1416;
+    --md-sys-color-on-background: #DEE3E6;
+    --md-sys-color-surface: #141A1D; 
+    --md-sys-color-surface-variant: #40484C;
+    --md-sys-color-on-surface-variant: #C0C8CC;
+    --md-sys-color-primary: #89D0ED;
+    --md-sys-color-outline: #8A9296;
+
+    /* Skill Metric Threshold Colors */
+    --color-above50: #89e4af; /* Soft Green */
+    --color-between: #ffb703; /* Soft Yellow */
+    --color-below25: #ffb4ab; /* Soft Red */
 }
 
+/* ==========================================================================
+   GLOBAL GLOBAL LAYOUT SETUPS
+   ========================================================================== */
 body {
-    background-color: #f1f2f6; 
-    color: #ffffff;            
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 40px 16px;
+    background-color: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;         
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-/* ==========================================
-   2. Profile Card Container
-   ========================================== */
+/* Base App Box Layout */
 .profile-container {
-    background-color: #1e293b; 
-    max-width: 450px;          
-    width: 90%;
-    padding: 2.5rem;
-    border-radius: 16px;       
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
-    text-align: center;        
+    max-width: 520px;
+    width: 100%;
+    background-color: var(--md-sys-color-surface);
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center;
+    box-sizing: border-box;
+    animation: profileSlideIn 0.6s cubic-bezier(0.2, 0, 0, 1) forwards;
 }
 
-/* ==========================================
-   3. Typography
-   ========================================== */
+@keyframes profileSlideIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.2px;
     color: #ffffff;
-    font-weight: 700;
 }
 
 h2 {
-    font-size: 1.5rem;
-    color: #38bdf8;            /* Bright neon blue for dark mode */
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0 0 24px 0;
+    color: var(--md-sys-color-primary);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 32px 0 16px 0;
+    text-align: left;
+    letter-spacing: 0.15px;
+    color: #ffffff;
+    border-bottom: 1px solid var(--md-sys-color-surface-variant);
+    padding-bottom: 8px;
 }
 
 .bio-text {
-    font-size: 1.1rem;
-    line-height: 1.6;          
-    color: #cbd5e1;            
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface-variant);
+    text-align: left;
+    margin-bottom: 24px;
 }
 
-/* ==========================================
-   4. Links & Buttons Shared Layout
-   ========================================== */
-.links-container {
-    display: flex;
-    flex-direction: column;    
-    gap: 12px;                 
-    width: 100%;               
-    align-items: center;
-}
-
-.btn {
-    display: inline-flex;      
-    align-items: center;       
-    justify-content: flex-start; /* Left-aligns icon + text for a cleaner look */
-    padding-left: 2rem;          /* Pushes content nicely away from the left edge */
-    gap: 16px;                 
-    color: #ffffff;            
-    text-decoration: none;     
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    border-radius: 8px;
-    font-weight: 600;
-    width: 280px;               /* Uniform width looks clean and structured */
-    transition: background-color 0.2s ease, transform 0.2s ease; 
-}
-
-/* Keeps icons perfectly centered on a vertical axis */
-.btn i {
-    width: 20px;                
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-/* ==========================================
-   5. Official Brand Colors & Hovers
-   ========================================== */
-
-/* GitHub - Black/Dark Charcoal */
-.btn-github {
-    background-color: #24292e; 
-}
-.btn-github:hover {
-    background-color: #171a1d;
-    transform: translateY(-2px); 
-}
-
-/* Goals and Stats - Custom Success Green */
-.btn-goals {
-    background-color: #16a34a; 
-}
-.btn-goals:hover {
-    background-color: #15803d;
-    transform: translateY(-2px); 
-}
-
-/* YouTube - Official Brand Red */
-.btn-youtube {
-    background-color: #ff0000; 
-}
-.btn-youtube:hover {
-    background-color: #cc0000;
-    transform: translateY(-2px);
-}
-
-/* Discord - Official "Blurple" */
-.btn-discord {
-    background-color: #5865f2; 
-}
-.btn-discord:hover {
-    background-color: #404eed;
-    transform: translateY(-2px);
-}
-
-/* Reddit - Official "Orangered" */
-.btn-reddit {
-    background-color: #ff4500; 
-}
-.btn-reddit:hover {
-    background-color: #cc3700;
-    transform: translateY(-2px);
-}
-
-/* Roblox - Official Dark Charcoal/Black */
-.btn-roblox {
-    background-color: #000000; 
-    border: 1px solid #334155; /* Subtle border so it stands out against the slate card */
-}
-.btn-roblox:hover {
-    background-color: #111827;
-    transform: translateY(-2px);
+/* ==========================================================================
+   INFO BULLET LISTS
+   ========================================================================== */
+.center-text-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    text-align: left;
 }
 
 .center-text-list li {
-    margin-bottom: 12px; /* This pushes the next item down */
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ==========================================================================
+   EXPRESSIVE SHAPE MORPH SYSTEM
+   ========================================================================== */
+.header-widget-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.expressive-shape {
+    width: 38px;
+    height: 38px;
+    background-color: var(--md-sys-color-primary);
+    animation: shapeMorph 8s ease-in-out infinite alternate;
+    flex-shrink: 0;
+}
+
+@keyframes shapeMorph {
+    0% { border-radius: 50% 50% 50% 50%; transform: rotate(0deg); }
+    25% { border-radius: 12px 50% 12px 50%; }
+    50% { border-radius: 50% 12px 50% 12px; transform: rotate(90deg); }
+    75% { border-radius: 16px 16px 50% 16px; }
+    100% { border-radius: 50% 50% 12px 12px; transform: rotate(180deg); }
+}
+
+/* ==========================================================================
+   SKILLS DISPLAY LAYER
+   ========================================================================== */
+.whatiknow {
+    margin-bottom: 32px;
+}
+
+.skills-card {
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    border: 1px solid var(--md-sys-color-surface-variant);
+    text-align: left;
+}
+
+.skills-title {
+    font-size: 1.3rem;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.skills-subtitle {
+    margin: 0 0 20px 0;
+    color: var(--md-sys-color-outline);
+    font-size: 0.85rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.pct-above50 { color: var(--color-above50); }
+.pct-between { color: var(--color-between); }
+.pct-below25 { color: var(--color-below25); }
+
+/* Wavy Indicator Tracks */
+.wavy-track {
+    background-color: var(--md-sys-color-surface-variant);
+    height: 12px;
+    border-radius: 6px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    margin-top: 4px;
+}
+
+.wavy-bar {
+    height: 100%;
+    border-radius: 6px;
+    background-image: 
+        radial-gradient(circle at 4px -2px, transparent 4px, currentColor 4px),
+        radial-gradient(circle at 8px 14px, currentColor 6px, transparent 6px);
+    background-size: 12px 100%;
+    background-repeat: repeat-x;
+    animation: rippleFlow 0.8s linear infinite;
+}
+
+.bar-above50 { color: var(--color-above50); }
+.bar-between { color: var(--color-between); }
+.bar-below25 { color: var(--color-below25); }
+
+@keyframes rippleFlow {
+    0% { background-position-x: 0px; }
+    100% { background-position-x: 12px; }
+}
+
+/* ==========================================================================
+   SINGLE COLUMN NAVIGATION CONTAINER & LINKS
+   ========================================================================== */
+.links-container {
+    display: flex;
+    flex-direction: column; /* Locks links to separate individual rows */
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 100px; /* Material 3 Pill Corner */
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--md-sys-color-surface-variant);
+    transition: background-color 0.25s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s ease, transform 0.1s ease;
+}
+
+/* Strict Inline SVG Sizing to Prevent Huge Stretched Graphic Logos */
+.native-icon {
+    width: 18px !important;
+    height: 18px !important;
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+/* Invisible wave ribbon under links */
+.btn-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    background-image: 
+        radial-gradient(circle at 2px -1px, transparent 2px, currentColor 2px),
+        radial-gradient(circle at 4px 5px, currentColor 3px, transparent 3px);
+    background-size: 6px 100%;
+    background-repeat: repeat-x;
+    transition: opacity 0.2s ease;
+    z-index: -1;
+}
+
+.btn:hover .btn-wave {
+    opacity: 1;
+    animation: rippleFlow 0.6s linear infinite;
+}
+
+/* Brand Button Coloring Overrides & Interactive Filters */
+.btn-github .btn-wave { color: #f0f6fc; }
+.btn-github:hover { background-color: rgba(36, 41, 46, 0.25); border-color: #444c56; }
+
+.btn-goals .btn-wave { color: var(--md-sys-color-primary); }
+.btn-goals:hover { background-color: rgba(0, 92, 116, 0.25); border-color: var(--md-sys-color-primary); }
+
+.btn-youtube .btn-wave { color: #ff0000; }
+.btn-youtube:hover { background-color: rgba(204, 0, 0, 0.2); border-color: #ff3333; }
+
+.btn-discord .btn-wave { color: #5865f2; }
+.btn-discord:hover { background-color: rgba(69, 79, 191, 0.2); border-color: #7289da; }
+
+.btn-instagram .btn-wave { color: #fccc63; } 
+.btn-instagram:hover { background-color: rgba(225, 48, 108, 0.15); border-color: #e1306c; }
+
+.btn-reddit .btn-wave { color: #ff4500; }
+.btn-reddit:hover { background-color: rgba(204, 55, 0, 0.2); border-color: #ff5714; }
+
+.btn-roblox .btn-wave { color: #ffffff; }
+.btn-roblox:hover { background-color: rgba(25, 25, 25, 0.4); border-color: #444444; }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN INTERFACE
+   ========================================================================= */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+    .header-widget-row {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
