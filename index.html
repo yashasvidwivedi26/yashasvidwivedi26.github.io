@@ -3,57 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashasvi Dwivedi | Personal Website</title>
+    <title>Yashasvi Dwivedi's Personal Website</title>
     
+    <!-- Visual Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Material Symbols & Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Material 3 Dark Theme Design Tokens */
+        :root {
+            --m3-background: #111318;
+            --m3-on-background: #e2e2e9;
+            --m3-surface: #1a1c1e;
+            --m3-surface-variant: #43474e;
+            --m3-on-surface: #c3c6cf;
+            --m3-outline: #8d9199;
+            
+            /* Logic Color Thresholds */
+            --m3-color-above50: #a8dbb4;  /* Soft Green */
+            --m3-color-between: #ffb703;  /* Soft Yellow */
+            --m3-color-below25: #ffb4ab;  /* Soft Red */
+        }
+
+        /* Global Structural Reset */
+        body {
+            margin: 0;
+            padding: 40px 16px;
+            background-color: var(--m3-background);
+            color: var(--m3-on-background);
+            font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Centered App Container */
+        .profile-container {
+            max-width: 520px;
+            width: 100%;
+            background-color: var(--m3-surface);
+            border-radius: 28px; /* M3 Extra Large Rounded Corner */
+            padding: 32px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        /* Typography Styles */
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.2px;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin: 0 0 24px 0;
+            color: var(--m3-on-surface);
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 32px 0 16px 0;
+            text-align: left;
+            letter-spacing: 0.15px;
+            color: #ffffff;
+            border-bottom: 1px solid var(--m3-surface-variant);
+            padding-bottom: 8px;
+        }
+
+        .bio-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--m3-on-surface);
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        /* Quick Info List Section */
+        .center-text-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 32px 0;
+            text-align: left;
+        }
+
+        .center-text-list li {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--m3-on-surface);
+        }
+
+        /* M3 Skill Indicator Widget */
+        .whatiknow {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--m3-surface-variant);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .skill-item {
+            margin-bottom: 16px;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Sleek 4px Material Progress Bar Track */
+        .progress-track {
+            background-color: var(--m3-surface-variant);
+            height: 4px;
+            border-radius: 2px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        /* Dynamic Grid Links Container */
+        .links-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        /* Material 3 Filled/Tonal Button Structuring */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-radius: 100px; /* M3 Standard Fully Rounded Pill */
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.25s cubic-bezier(0.2, 0, 0, 1), border-color 0.25s ease, transform 0.1s ease;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--m3-surface-variant);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Brand Colors & Interactive Hover Effects */
+        .btn-github i { color: #f0f6fc; }
+        .btn-github:hover {
+            background-color: #24292e;
+            border-color: #444c56;
+        }
+
+        .btn-goals i { color: #5ce1e6; }
+        .btn-goals:hover {
+            background-color: #008080;
+            border-color: #00a3a3;
+        }
+
+        .btn-youtube i { color: #ff0000; }
+        .btn-youtube:hover {
+            background-color: #cc0000;
+            border-color: #ff3333;
+        }
+
+        .btn-discord i { color: #5865f2; }
+        .btn-discord:hover {
+            background-color: #454fbf;
+            border-color: #7289da;
+        }
+
+        .btn-reddit i { color: #ff4500; }
+        .btn-reddit:hover {
+            background-color: #cc3700;
+            border-color: #ff5714;
+        }
+
+        .btn-roblox i { color: #ffffff; }
+        .btn-roblox:hover {
+            background-color: #111111;
+            border-color: #333333;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 480px) {
+            .links-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <main class="profile-container">
         <h1>Welcome to my personal website.</h1>
-        
-        <h2>Yashasvi Dwivedi.</h2>
+        <h2>Yashasvi Dwivedi 😊!!</h2>
         
         <p class="bio-text">
-            I'm a guy focused on building clean, functional web projects and exploring new tech. I am a tech enthusiast person. I like custom roms (I use Evolution X #keepevolving). When I'm not doing all this, I study, or think about ideas for my video game projects (on which, unfortunately, I'm unable to spend much time).</p>
-<h3>Some information about me 👇🏻</h3>
-<ul class="center-text-list">
-<li>Plays cricket at B.L.W Cricket Academy, Varanasi, Uttar Pradesh. 🏏</li>
-<li>Likes tech and computers. 💻</li>
-<li>Also likes to think about ideas and design them for video games. 🎮</li>
-<li>Also likes to design user interfaces, would be happy to become web designer. 🖥️</li>
-<li><strong>This is NOT written by AI, the previous bio was 😂.</strong></li>
-</ul>
-        <div class="links-container">
-            <a href="https://github.com/yashasvidwivedi26" target="_blank" class="btn btn-github">
-                <i class="fab fa-github"></i> GitHub Profile
-            </a>
+            I'm a guy focused on building functional web projects and exploring new tech. I am a tech enthusiast. I like custom roms (I use Evolution X #keepevolving). When I'm not doing all this, I study, or work on ideas for my video game projects (on which, unfortunately, I'm unable to spend much time).
+        </p>
+
+        <h3>Some information about me 👇🏻</h3>
+        <ul class="center-text-list">
+            <li><span>🏏</span> Plays cricket</li>
+            <li><span>💻</span> Likes tech and computers.</li>
+            <li><span>🎮</span> Also likes to create ideas and design them for video games.</li>
+            <li><span>🖥️</span> Also likes to design user interfaces, would be happy to become web designer.</li>
+        </ul>
+
+        <!-- Material 3 Color Thresholded Skill Progress Section -->
+        <div class="whatiknow">
+            <div style="font-size: 1.1rem; font-weight: 400; color: #ffffff; margin-bottom: 2px;">What I Know 🚀</div>
+            <div style="font-size: 0.8rem; color: var(--m3-outline); margin-bottom: 20px;">Foundations & Learning (8th Grade)</div>
             
-            <a href="./stats-and-goals/" class="btn btn-goals">
-                <i class="fas fa-bullseye"></i> Goals and Stats
-            </a>
+            <!-- Python: 60% (Above 50% = Green) -->
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>Python</span>
+                    <span style="color: var(--m3-color-above50);">60%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" style="background-color: var(--m3-color-above50); width: 60%;"></div>
+                </div>
+            </div>
 
-            <a href="https://youtube.com/@yashasvidwivedi891" target="_blank" class="btn btn-youtube">
-                <i class="fab fa-youtube"></i> YouTube Channel
-            </a>
+            <!-- HTML: 55% (Above 50% = Green) -->
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>HTML</span>
+                    <span style="color: var(--m3-color-above50);">55%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" style="background-color: var(--m3-color-above50); width: 55%;"></div>
+                </div>
+            </div>
 
-            <a href="https://discord.gg/jsN2wCfU" target="_blank" class="btn btn-discord">
-                <i class="fab fa-discord"></i> Discord
-            </a>
+            <!-- Java: 25% (On boundary condition = Yellow) -->
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>Java</span>
+                    <span style="color: var(--m3-color-between);">25%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" style="background-color: var(--m3-color-between); width: 25%;"></div>
+                </div>
+            </div>
 
-            <a href="https://www.reddit.com/user/Dwivedi_Yashasvi891/" target="_blank" class="btn btn-reddit">
-                <i class="fab fa-reddit-alien"></i> Reddit Profile
-            </a>
+            <!-- CSS: 20% (Below 25% = Red) -->
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>CSS</span>
+                    <span style="color: var(--m3-color-below25);">20%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" style="background-color: var(--m3-color-below25); width: 20%;"></div>
+                </div>
+            </div>
 
-            <a href="https://www.roblox.com/users/3339821102/profile" target="_blank" class="btn btn-roblox">
-                <i class="fas fa-cube"></i> Roblox Profile
-            </a>
-        </div>
-    </main>
-
-</body>
-</html>
+            <!-- C++: 10% (Below 25% = Red) -->
+            <div class="skill-item">
+                <div class="skill-info">
+                    <span>C++ 😂</span>
+                    <span style="color: var(--m3-color-below25);">10%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-bar" style="background-color: var(--m3-color-below25); width: 10%;"></div>
+                </div>
