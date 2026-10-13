@@ -4,7 +4,7 @@ permalink: /stats-and-goals/
 
 Welcome to My Website! 👋
 
-This is my very first website hosted for free on GitHub Pages. 
+This is my very first website hosted on GitHub Pages. 
 
 ## About Me
 * 🚀 Learning how to build websites
